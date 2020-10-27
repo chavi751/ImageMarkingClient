@@ -1,0 +1,28 @@
+<h3>Create new document</h3>
+<form [formGroup]="newDocumentForm" (ngSubmit)="onSubmit(newDocumentForm.value)">
+  <div>
+    User Id: {{user.emailAddress}} <br><br>
+  </div>
+  <div>
+      <label for="Name">
+          Document Name
+      </label>
+      <input type="text" formControlName="Name">
+  </div>
+  <div>
+      <label for="SelectedImage">
+        Selected Image
+      </label>
+      <input type="file" formControlName="SelectedImage" (change)="onSelectFile($event)" >
+  </div>
+
+  <button type="submit">Create Document</button>
+
+</form> 
+<div ng-if="!error.view">{{error}}</div>
+
+    
+      
+       
+   
+

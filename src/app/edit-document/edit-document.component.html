@@ -1,0 +1,34 @@
+<div><h4> User/s that show this document now:</h4>
+   
+    <div *ngFor="let user of users">{{user}},</div>
+
+    <br>
+</div>
+
+<form [formGroup]="newDocumentForm" (ngSubmit)="onSubmit(newDocumentForm.value)">
+
+    <div>
+        <label for="Name">
+            Document Name
+        </label>
+        <input type="text" formControlName="Name">
+    </div>
+     
+    <div>
+        <label for="ChangeImage">
+            Change Image
+        </label>
+        <input type="file" formControlName="ChangeImage" (change)="onSelectFile($event)" >
+    </div>
+  <div>
+    <button type="submit">Change name/image</button>
+  </div>
+  
+  </form> 
+  
+  
+  <app-draw [DocumentId]="currentDocument.DocumentId"></app-draw>
+  
+      
+        
+         

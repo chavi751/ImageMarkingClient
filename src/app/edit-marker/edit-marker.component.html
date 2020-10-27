@@ -1,0 +1,23 @@
+<div>
+    Change colors of this marker:
+</div>
+<form [formGroup]="markerForm" (submit)="onSubmit()">
+<div>
+<table>
+    <tr>
+        <th>Marker id</th>
+        <th>Marker type</th>
+        <th>Back color</th>
+        <th>Fore color</th>
+        <th>Cange</th>
+    </tr>
+    <tr>
+    <td>{{currentMarker.markerId}}</td>
+    <td>{{currentMarker.markerType}}</td>
+    <td><input id="backColor" formControlName="backColor"  /></td>
+    <td><input id="foreColor" formControlName="foreColor" /></td>
+    <td><button type="submit">Send new colors</button></td>
+    </tr>
+</table>
+</div>
+</form>

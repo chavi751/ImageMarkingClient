@@ -1,0 +1,28 @@
+<table style="width: 100%;">
+    <tr>
+      <th>Marker id</th>
+      <th>Marker type</th>
+      <th>Back color</th>
+      <th>Fore color</th>
+      <th>Edit marker</th>
+      <th>Remove marker</th>
+         
+    </tr>
+    <tr *ngFor="let marker of markers">
+      <td>{{ marker.markerId }}</td>
+      <td>{{ marker.markerType }}</td>
+      <td>{{ marker.backColor }}</td>
+      <td>{{ marker.foreColor }}</td>
+      <td>
+        <button (click)="toggleEdit(true,marker.markerId)">Edit</button>
+      </td>
+      <td>
+        <button (click)="removeMarker(marker.markerId)">Remove</button>
+      </td>
+      
+      </tr>
+      </table>
+      <app-edit-marker
+      [MarkerId]="editMarker.id"
+      (onStopEdit)="editMarker.show = false"
+      *ngIf="editMarker.show"></app-edit-marker>

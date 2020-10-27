@@ -1,0 +1,59 @@
+<div>
+<h3>welcome {{user.userName}}</h3>
+<h5>If you want unsubsribe from system, click here:</h5>
+<button (click)="unsubscribe()">unsubsribe</button> 
+<div><br></div>
+<button (click)="createNewDocument()">create new document</button>
+<div><br></div>
+</div>
+
+<div>
+<table style="width: 100%;">
+    <tr *ngIf="this.documents?.length > 0">
+      <th>Document id</th>
+      <th>Document name</th>
+      <th>Belong to user</th>
+      <th>Image</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Shared</th>
+      <th>All document shares </th>
+      
+    </tr>
+    <tr *ngFor="let document of documents">
+      <td>{{ document.DocumentId }}</td>
+      <td>{{ document.DocumentName }}</td>
+      <td>{{ document.UserID }}</td>
+      <td><img [src]="document.ImageURL" style="width:100px;height:100px;"></td>
+      
+      <td>
+        <button (click)="editDocument(document.DocumentId)">Edit</button>
+      </td>
+      <td>
+       
+        <button (click)="deleteDocument(document.DocumentId)">Delete</button>
+      </td>
+      <td>
+        <div *ngIf="document.UserID == user.emailAddress">
+        <button (click)="toggleShare(true,document.DocumentId)">Share</button>
+        
+      </div>
+     
+      </td>
+      <td> <button (click)="allShares(document.DocumentId)">All shares</button>
+      </td>
+      
+    </tr>
+  </table>
+</div>
+  
+  <app-share-document
+  [DocumentId]="shareDocument.id"
+  (onStopShare)="shareDocument.show = false"
+  *ngIf="shareDocument.show"
+>
+</app-share-document>
+
+ 
+  
+  

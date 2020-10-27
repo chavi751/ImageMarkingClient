@@ -1,0 +1,8 @@
+
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()" >
+    <div>
+    <input id="UserName" formControlName="UserName" placeholder="user name:" /><br/>
+    <input id="emailAddress" formControlName="emailAddress" placeholder="email address:" /><br />
+    <button type="submit">Sign In</button>
+    </div>
+    </form>

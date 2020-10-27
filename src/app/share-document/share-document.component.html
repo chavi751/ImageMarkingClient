@@ -1,0 +1,12 @@
+
+<div>
+    Fill in the details of the user with whom you want to share this document
+</div>
+<form [formGroup]="userForm" (submit)="onSubmit()">
+    <div>
+    <p>Document id: {{DocumentId}}</p>
+    <input id="UserId" formControlName="UserId" placeholder="UserId" /><br />
+    <input id="UserName" formControlName="UserName" placeholder="UserName" /><br />
+    <button type="submit">Shared Document</button>
+    </div>
+</form>

@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+div {
+  margin: 10px;
+}
+input,
+select {
+  border-radius: 5px;
+  min-width: 200px;
+  padding: 4px;
+  margin-bottom: 7px;
+}
+table > tr {
+  margin-bottom: 4px;
+  width: 100% !important;
+  border-bottom: 2px solid #128cf054;
+  text-align: center;
+  }
+button {
+  border-radius: 5px;
+  width: max-content;
+  font-weight: bold;
+  padding: 4px 10px;
+  background-color: #0c1adb57;
+  border: 2px solid #333;
+  color:#333
+}
+
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";

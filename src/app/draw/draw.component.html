@@ -1,0 +1,25 @@
+<div>
+<h4>Choose what you want to draw on this document</h4>
+
+  <button #btn (click)="setModeDrawing('Ellipse')">Ellipse</button>
+  <button #btn2 (click)="setModeDrawing('Rect')">rectangle</button>
+  <div>Stroke Color:</div>
+  <input id="foreColor" type="color" value='blue' rgba>
+  <div>Fill Color:</div>
+  <input id="backColor" type="color" value='red' rgba>
+
+  <div #container id="container" >
+    
+      <canvas #shapeCanvas class='canvas' 
+      [style.background-image]="'url(' + currentDocument.ImageURL + ')'"></canvas>
+      <canvas #drawingCanvas class='canvas' ></canvas>
+      
+</div>
+</div>
+
+<app-markers-list></app-markers-list>
+
+
+  
+  
+  

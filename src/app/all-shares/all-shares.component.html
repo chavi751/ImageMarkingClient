@@ -1,0 +1,12 @@
+<div>
+<table>
+    <tr>
+       <th>The partner users of this document</th> 
+       
+    </tr>
+    <tr  *ngFor="let share of shares">
+    <td>{{share.UserId}}</td>
+    <td><button (click)="removeShare(share.UserId)">Remove Share</button></td>
+</tr>
+</table>
+</div>
